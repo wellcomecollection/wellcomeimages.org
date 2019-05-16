@@ -1,0 +1,31 @@
+{
+  "Records": [
+    {
+      "cf": {
+        "config": {
+          "distributionId": "EXAMPLE"
+        },
+        "request": {
+          "uri": "/here/we/go",
+          "method": "GET",
+          "clientIp": "2001:cdba::3257:9652",
+          "querystring": "q=wheres my hat",
+          "headers": {
+            "user-agent": [
+              {
+                "key": "User-Agent",
+                "value": "test-agent"
+              }
+            ],
+            "host": [
+              {
+                "key": "Host",
+                "value": "wellcomeimages.org"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

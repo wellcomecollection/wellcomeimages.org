@@ -1,0 +1,9 @@
+# All lambdas
+*.zip
+
+# terraform
+.terraform/
+*.tfvars
+*.tfstate
+*.tfstate.backup
+.terraform.tfstate.lock.info
