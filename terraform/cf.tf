@@ -20,7 +20,8 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
   is_ipv6_enabled = true
 
   aliases = [
-    "wi.wellcomecollection.org",
+    "wellcomeimages.org",
+    "*.wellcomeimages.org",
   ]
 
   default_cache_behavior {
