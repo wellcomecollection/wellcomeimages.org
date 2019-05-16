@@ -5,7 +5,7 @@ data "aws_acm_certificate" "wellcomecollection_ssl_cert" {
 
 resource "aws_cloudfront_distribution" "wellcomeimages" {
   origin {
-    domain_name = "wellcomeimages.org "
+    domain_name = "wellcomeimages.org"
     origin_id   = "origin"
 
     custom_origin_config {
