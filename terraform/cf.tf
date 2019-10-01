@@ -40,6 +40,7 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
       query_string_cache_keys = [
         "MIROPAC", # Wellcome Images redirect
         "MIRO",    # Wellcome Images redirect
+        "query",
       ]
 
       cookies {
