@@ -1,6 +1,17 @@
 # Lookup certificate to use ARN later on
-data "aws_acm_certificate" "wellcomecollection_ssl_cert" {
+/*data "aws_acm_certificate" "wellcomecollection_ssl_cert" {
   domain = "wellcomecollection.org"
+}*/
+
+# If you use the lookup above, you get an error from Terraform:
+#
+#     Error: Multiple certificates for domain "wellcomecollection.org" found
+#     in this region
+#
+# For now I've hard-coded the ARN that was already in use, but long-term we
+# should probably fix the certificates so we can use the data block again.
+locals {
+  acm_certificate_arn = "arn:aws:acm:us-east-1:130871440101:certificate/9b4d357e-689f-4fd3-bf12-4e6c5fd4af35"
 }
 
 resource "aws_cloudfront_distribution" "wellcomeimages" {
@@ -38,8 +49,8 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
       query_string = true
 
       query_string_cache_keys = [
-        "MIROPAC", # Wellcome Images redirect
         "MIRO",    # Wellcome Images redirect
+        "MIROPAC", # Wellcome Images redirect
         "query",
       ]
 
@@ -55,7 +66,7 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = "${data.aws_acm_certificate.wellcomecollection_ssl_cert.arn}"
+    acm_certificate_arn      = "${local.acm_certificate_arn}"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1"
   }
