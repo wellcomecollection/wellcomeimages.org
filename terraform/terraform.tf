@@ -14,8 +14,8 @@ terraform {
 data "terraform_remote_state" "router" {
   backend = "s3"
 
-  config {
-    role_arn = "arn:aws:iam::130871440101:role/experience-developer"
+  config = {
+    role_arn = "arn:aws:iam::130871440101:role/experience-read_only"
 
     bucket = "wellcomecollection-infra"
     key    = "build-state/router.tfstate"
