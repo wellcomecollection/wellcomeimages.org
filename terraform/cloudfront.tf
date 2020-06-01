@@ -61,12 +61,12 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
 
     lambda_function_association {
       event_type = "origin-request"
-      lambda_arn = "${aws_lambda_function.edge_lambda_request.qualified_arn}"
+      lambda_arn = aws_lambda_function.edge_lambda_request.qualified_arn
     }
   }
 
   viewer_certificate {
-    acm_certificate_arn      = "${local.acm_certificate_arn}"
+    acm_certificate_arn      = local.acm_certificate_arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1"
   }
