@@ -20,13 +20,6 @@ resource "aws_iam_role" "edge_lambda_role" {
   tags = local.default_tags
 }
 
-resource "aws_s3_bucket" "wellcomeimages" {
-  bucket = "wellcomeimages"
-  acl    = "private"
-
-  tags = local.default_tags
-}
-
 resource "aws_lambda_function" "edge_lambda_request" {
   function_name = "wellcomeimages_edge_lambda_request"
   role          = aws_iam_role.edge_lambda_role.arn
