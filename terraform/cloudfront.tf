@@ -11,7 +11,7 @@
 # For now I've hard-coded the ARN that was already in use, but long-term we
 # should probably fix the certificates so we can use the data block again.
 locals {
-  acm_certificate_arn = "arn:aws:acm:us-east-1:130871440101:certificate/9b4d357e-689f-4fd3-bf12-4e6c5fd4af35"
+  acm_certificate_arn = "arn:aws:acm:us-east-1:130871440101:certificate/ef52a10d-1c6b-4612-974c-f64a15e0d8af"
 }
 
 resource "aws_cloudfront_distribution" "wellcomeimages" {
