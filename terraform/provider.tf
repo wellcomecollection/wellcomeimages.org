@@ -13,9 +13,8 @@ locals {
 }
 
 provider "aws" {
-  region  = "eu-west-1"
-  version = "~> 2.69"
-  alias   = "dns"
+  region = "eu-west-1"
+  alias  = "dns"
 
   assume_role {
     role_arn = "arn:aws:iam::267269328833:role/wellcomecollection-assume_role_hosted_zone_update"
