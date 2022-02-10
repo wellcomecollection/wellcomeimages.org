@@ -24,6 +24,8 @@ resource "aws_lambda_function" "edge_lambda_request" {
   runtime       = "nodejs8.10"
   handler       = "edge_lambda_origin.handler"
 
+  description = "Redirects requests from wellcomeimages.org"
+
   filename         = "../lambdas/edge_lambda_origin.zip"
   source_code_hash = filebase64sha256("../lambdas/edge_lambda_origin.zip")
   publish          = true
