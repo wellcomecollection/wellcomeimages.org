@@ -23,6 +23,10 @@ resource "aws_iam_role_policy_attachment" "basic_execution_role" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+resource "aws_cloudwatch_log_group" "edge_lambda" {
+  name = "/aws/lambda/us-east-1.wellcomeimages_edge_lambda_request"
+}
+
 resource "aws_lambda_function" "edge_lambda_request" {
   function_name = "wellcomeimages_edge_lambda_request"
   role          = aws_iam_role.edge_lambda_role.arn
