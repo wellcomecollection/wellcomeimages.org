@@ -18,6 +18,11 @@ resource "aws_iam_role" "edge_lambda_role" {
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
 }
 
+resource "aws_iam_role_policy_attachment" "basic_execution_role" {
+  role       = aws_iam_role.edge_lambda_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
 resource "aws_lambda_function" "edge_lambda_request" {
   function_name = "wellcomeimages_edge_lambda_request"
   role          = aws_iam_role.edge_lambda_role.arn
