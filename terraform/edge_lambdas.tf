@@ -16,8 +16,6 @@ data "aws_iam_policy_document" "lambda_assume_role" {
 resource "aws_iam_role" "edge_lambda_role" {
   name_prefix        = "edge_lambda"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
-
-  tags = local.default_tags
 }
 
 resource "aws_lambda_function" "edge_lambda_request" {
@@ -29,6 +27,4 @@ resource "aws_lambda_function" "edge_lambda_request" {
   filename         = "../lambdas/edge_lambda_origin.zip"
   source_code_hash = filebase64sha256("../lambdas/edge_lambda_origin.zip")
   publish          = true
-
-  tags = local.default_tags
 }
