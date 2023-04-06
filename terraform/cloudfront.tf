@@ -62,6 +62,4 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
   }
 
   retain_on_delete = true
-
-  tags = local.default_tags
 }
