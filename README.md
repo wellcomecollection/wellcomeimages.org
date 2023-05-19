@@ -26,3 +26,7 @@ This repo has the code for redirecting users and URLs to the new site.
 
 *   The Route 53 hosted zone for wellcomeimages.org is defined in a D&T account.
     We create DNS records in that hosted zone that point to our CloudFront distributions.
+
+## How to
+
+*   [Get to the Route 53 Hosted Zone in the AWS Console](docs/route53-hosted-zone.md)
