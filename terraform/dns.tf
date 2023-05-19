@@ -29,8 +29,10 @@ locals {
 
   txt_records = {
     "wellcomeimages.org"                                    = "_globalsign-domain-verification=1kCY4qhhGcic0AEIguR2QVLwixKmlxKqy7FgpgNcye"
-    "_pki-validation.wellcomeimages.org"                    = "19FA-9346-DF91-EF98-FB22-DA70-C569-A88E"
     "_pki-validation.wellcomeimages-org.wellcomeimages.org" = "B643-4EB1-F91C-11A8-F7E0-9B2B-6255-C4F9"
+
+    # This value was sent by Slack from Flavio V on 17 May 2023
+    "_pki-validation.wellcomeimages.org"                    = "19FA-9346-DF91-EF98-FB22-DA70-C569-A88E"
   }
 }
 
