@@ -13,9 +13,3 @@ module "cert" {
     aws.dns = aws.dns
   }
 }
-
-data "aws_route53_zone" "wellcomeimages" {
-  provider = aws.dns
-
-  name = "wellcomeimages.org."
-}
