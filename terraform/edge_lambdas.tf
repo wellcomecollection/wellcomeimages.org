@@ -30,7 +30,7 @@ resource "aws_cloudwatch_log_group" "edge_lambda" {
 resource "aws_lambda_function" "edge_lambda_request" {
   function_name = "wellcomeimages_edge_lambda_request"
   role          = aws_iam_role.edge_lambda_role.arn
-  runtime       = "nodejs8.10"
+  runtime       = "nodejs20.x"
   handler       = "edge_lambda_origin.handler"
 
   description = "Redirects requests from wellcomeimages.org"
