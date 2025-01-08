@@ -45,7 +45,7 @@ resource "aws_cloudfront_distribution" "wellcomeimages" {
 
     lambda_function_association {
       event_type = "origin-request"
-      lambda_arn = aws_lambda_function.edge_lambda_request.qualified_arn
+      lambda_arn = "${aws_lambda_function.edge_lambda_request.arn}:9"
     }
   }
 
