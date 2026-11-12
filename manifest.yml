@@ -1,0 +1,20 @@
+apiVersion: backplane/v1
+kind: System
+metadata:
+  name: wellcomeimages-org
+  title: wellcomeimages.org
+  description: Redirects the retired Wellcome Images site to wellcomecollection.org/works.
+spec:
+  owner: team:digital-platform
+  lifecycle: production
+---
+apiVersion: backplane/v1
+kind: Component
+metadata:
+  name: wellcomeimages-org-redirects
+  description: CloudFront distribution and Lambda@Edge function that redirect wellcomeimages.org URLs.
+spec:
+  type: website
+  owner: team:digital-platform
+  lifecycle: production
+  system: system:wellcomeimages-org
